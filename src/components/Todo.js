@@ -14,15 +14,24 @@ function Todo({ todo, toggleComplete, removeTodo }) {
   return (
     <ListItem style={{ display: "flex" }}>
       <Checkbox checked={todo.completed} onClick={handleCheckboxClick} />
-      <Typography
-        variant='body1'
-        style={{
-          textDecoration: todo.completed ? "line-through" : null,
-        }}
-      >
-        {todo.task}
-        {todo.description}
-      </Typography>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <Typography
+          variant='body1'
+          style={{
+            textDecoration: todo.completed ? "line-through" : null,
+          }}
+          >
+          {todo.task}
+        </Typography>
+        <Typography
+          variant='body2'
+          style={{
+            textDecoration: todo.completed ? "line-through" : null,
+          }}
+          >
+          {todo.description}
+        </Typography>
+      </div>
       <IconButton onClick={handleRemoveClick}>
         <CloseIcon />
       </IconButton>

@@ -21,6 +21,7 @@ function Todo({ todo, toggleComplete, removeTodo }) {
         }}
       >
         {todo.task}
+        {todo.description}
       </Typography>
       <IconButton onClick={handleRemoveClick}>
         <CloseIcon />

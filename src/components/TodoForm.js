@@ -30,11 +30,18 @@ function TodoForm({ addTodo }) {
   return (
     <form className='todo-form' onSubmit={handleSubmit}>
       <TextField
-        label='Task'
+        label='Please enter a Todo:'
         type='text'
         name='task'
         value={todo.task}
         onChange={handleTaskInputChange}
+        autoComplete='off'
+      />
+      <TextField
+        label='Description of task:'
+        type='text'
+        name='description'
+        value={todo.description}
         autoComplete='off'
       />
       <Button type='submit'>Submit</Button>

@@ -55,7 +55,7 @@ function App() {
   return (
     <div className='App'>
       <Typography style={{ padding: 16 }} varient='h1'>
-        React Todos
+        Todos for the day: {todos.length}
       </Typography>
       <TodoForm addTodo={addTodo} />
       <TodoList

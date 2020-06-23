@@ -21,6 +21,7 @@ function App() {
   //  dependency array is a parameter that determines if the effect gets fired off our not
   //   1 or more variables change?  Effect is fired
   useEffect(() => {
+    //fires when todos array gets updated
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
   }, [todos]);
 
@@ -56,12 +57,11 @@ function App() {
       <Typography style={{ padding: 16 }} varient='h1'>
         React Todos
       </Typography>
-      <p> React Todo</p>
       <TodoForm addTodo={addTodo} />
       <TodoList
         todos={todos}
-        toggleComplete={toggleComplete}
         removeTodo={removeTodo}
+        toggleComplete={toggleComplete}
       />
     </div>
   );

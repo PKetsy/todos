@@ -4,15 +4,15 @@ import Todo from "./Todo";
 
 // This page is responsible for rendering a list of todos in an array
 
-function TodoList({ todos, toggleComplete, removeTodo }) {
+function TodoList({ todos, removeTodo, toggleComplete }) {
   return (
     <List>
       {todos.map((todo) => (
         <Todo
           key={todo.id}
           todo={todo}
-          toggleComplete={toggleComplete}
           removeTodo={removeTodo}
+          toggleComplete={toggleComplete}
         />
       ))}
     </List>

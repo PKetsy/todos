@@ -1,6 +1,6 @@
 import { Button, TextField } from "@material-ui/core";
 import React, { useState } from "react";
-import { v4 as uuid } from "uuid";
+import { v4 as uuidv4 } from "uuid";
 
 // This page keeps track of our todo state through a form
 
@@ -20,7 +20,7 @@ function TodoForm({ addTodo }) {
   function handleSubmit(e) {
     e.preventDefault();
     if (todo.task.trim()) {
-      addTodo({ ...todo, id: uuid.v4 });
+      addTodo({ ...todo, id: uuidv4() });
       // reset task input
       setTodo({ ...todo, task: "" });
     }
@@ -31,13 +31,13 @@ function TodoForm({ addTodo }) {
     <form className='todo-form' onSubmit={handleSubmit}>
       <TextField
         label='Task'
-        name='task'
         type='text'
+        name='task'
         value={todo.task}
         onChange={handleTaskInputChange}
         autoComplete='off'
       />
-      <button type='submit'>Submit</button>
+      <Button type='submit'>Submit</Button>
     </form>
   );
 }
